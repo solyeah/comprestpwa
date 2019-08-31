@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('partials/head') %>
+</head>
+
+<body>
+    <div class="container">
+      <i class="fas fa-smile"></i>
+      <h1>Welcome!</h1>
+      <p>Select A Nextpage</p>
+      <%- include('partials/navbar')  %>
+
+      <button class="btn btn-lg btn-primary">Car Query</button>
+      
+      <div id="head">
+        <h2>Car Query Result</h2>
+      </div>
+      <div id="div1">
+      </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+  $(document).ready(function(){
+    $("#head").hide();
+    $("button").click(function(){
+      $.get("http://13.124.148.191:3000/api/Vehicle", function(data, status){
+        
+        $("#head").show()
+        $("#div1").empty();
+        for(var i=0; i < data.length; i++)
+        {
+          $("#div1").append(JSON.stringify(data[i]));
+          $("#div1").append("<br>");
+        } 
+      });
+    });
+  });
+</script>

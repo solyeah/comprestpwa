@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('partials/head')  %>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="manifest" href="manifest.json" />
+    <!-- icon in the highest resolution we need it for -->
+    <link rel="icon" sizes="192x192" href="/icon/iconx3.png" />
+    <!-- reuse same icon for Safari -->
+    <link rel="apple-touch-icon" href="/icon/iconx3.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PWA Splash" />
+    <link
+      rel="apple-touch-startup-image"
+      href="/images/splash/launch-640x1136.png"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/images/splash/launch-750x1294.png"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/images/splash/launch-1242x2148.png"
+      media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/images/splash/launch-1125x2436.png"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/images/splash/launch-1536x2048.png"
+      media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/images/splash/launch-1668x2224.png"
+      media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/images/splash/launch-2048x2732.png"
+      media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="mask-icon"
+      href="/images/icons/safari-pinned-tab.svg"
+      color="#6F6F6F"
+    />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <div class="container">
+      <i class="fas fa-smile"></i>
+      <h1>Welcome Composer rest PWA!</h1>
+      <p>Select A Nextpage</p>
+      <%- include('partials/navbar')  %>
+    </div>
+
+    <script>
+      // Register service worker.
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+              .then((reg) => {
+                console.log('Service worker registered.', reg);
+              });
+        });
+      }
+    </script>
+
+  </body>
+</html>

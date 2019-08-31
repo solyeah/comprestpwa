@@ -1,0 +1,27 @@
+{
+  "name": "ComprestPWA",
+  "short_name": "Comprest",
+  "description": "PWA Splash Screens",
+  "icons" : [
+    {
+      "src": "/icon/iconx1.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/icon/iconx2.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/icon/iconx3.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "../views/index.ejs?launcher=true",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"  
+}
