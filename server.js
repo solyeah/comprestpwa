@@ -66,16 +66,18 @@ app.get('/api/memberinput', function (req, res) {
 }); 
 
 // Member Input handle
-app.post('/api/createcar/', async function (req, res) {
+app.post('/api/memberinput/', async function (req, res) {
   try {
-          var balance = parseInt(req.body.balance);
+          var balance = req.body.balance;
           var email = req.body.email;
           var firstname = req.body.firstname;
           var lastname = req.body.lastname;
           const data = {
               $class:"org.acme.vehicle.auction.Member",
-              vin: vin,
-              owner: owner
+              balance: balance,
+              email: email,
+              firstname: firstname,
+              lastname: lastname
           }        
       await fetch('http://13.124.148.191:3000/api/Member' ,{
         method :'POST',
