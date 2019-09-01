@@ -19,7 +19,7 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "../views/index.ejs?launcher=true",
+  "start_url": ".",
   "display": "fullscreen",
   "orientation": "landscape",
   "theme_color": "#ffffff",
