@@ -60,10 +60,38 @@ app.post('/api/createcar/', async function (req, res) {
   }   
 });
 
-// Change car owner page
-app.get('/api/changeowner', function (req, res) {
-  res.render('changeowner', { title: "Change Owner", activate: "changeowner" });
+// Member Input  page
+app.get('/api/memberinput', function (req, res) {
+  res.render('memberinput', { title: "Member Input", activate: "memberinput" });
 }); 
+
+// Member Input handle
+app.post('/api/createcar/', async function (req, res) {
+  try {
+          var balance = parseInt(req.body.balance);
+          var email = req.body.email;
+          var firstname = req.body.firstname;
+          var lastname = req.body.lastname;
+          const data = {
+              $class:"org.acme.vehicle.auction.Member",
+              vin: vin,
+              owner: owner
+          }        
+      await fetch('http://13.124.148.191:3000/api/Member' ,{
+        method :'POST',
+        headers : {
+           'Content-Type': 'application/json',
+           'Accept': 'application/json'
+        },
+        body:JSON.stringify(data)
+      })
+      console.log('Transaction has been submitted');
+      res.redirect('/');
+  } catch (error) {
+      console.error(`Failed to submit transaction: ${error}`);
+      res.status(400).json(error);
+  }   
+});
 
 // server start
 // app.listen(PORT, HOST);
