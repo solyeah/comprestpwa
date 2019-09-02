@@ -1,15 +1,14 @@
 // ExpressJS Setup
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT
 var bodyParser = require('body-parser');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const path = require('path');
 
 // Constants
-// const PORT = 8000;
-// const HOST = "0.0.0.0";
+const PORT = 8000;
+const HOST = "0.0.0.0";
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,7 +43,7 @@ app.post('/viechlepost/', async function (req, res) {
               vin: vin,
               owner: owner
           }        
-      await fetch('http://13.124.148.191:3000/api/Vehicle' ,{
+      await fetch('http://localhost:3001/api/Vehicle' ,{
           method :'POST',
           headers : {
           'Content-Type': 'application/json',
@@ -79,7 +78,7 @@ app.post('/memberpost/', async function (req, res) {
               firstname: firstname,
               lastname: lastname
           }        
-      await fetch('http://13.124.148.191:3000/api/Member' ,{
+      await fetch('http://localhost:3001/api/Member' ,{
         method :'POST',
         headers : {
            'Content-Type': 'application/json',
@@ -96,8 +95,5 @@ app.post('/memberpost/', async function (req, res) {
 });
 
 // server start
-// app.listen(PORT, HOST);
-// console.log(`Running on http://${HOST}:${PORT}`);
-
-//heroku start
-app.listen(PORT);
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
