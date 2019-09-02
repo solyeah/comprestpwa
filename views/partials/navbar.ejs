@@ -1,29 +1,29 @@
 <% if(activate=="index"){ %>
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="./api/queryallcars">Query all cars</a></li>
-        <li role="presentation"><a href="./api/createcar">Create a car</a></li>
-        <li role="presentation"><a href="./api/memberinput">Member Input</a></li>
+        <li role="presentation"><a href="./viecleget">Viecle Get</a></li>
+        <li role="presentation"><a href="./viechlepost">Viechle POST</a></li>
+        <li role="presentation"><a href="./memberpost">Member POST</a></li>
     </ul>
 <% }else if(activate=="query"){ %>
     <ul class="nav nav-tabs"> 
         <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation" class="active"><a href="../../api/queryallcars">Query all cars</a></li>
-        <li role="presentation"><a href="../../api/createcar">Create a car</a></li>
-        <li role="presentation"><a href="../../api/memberinput">Member Input</a></li>
+        <li role="presentation" class="active"><a href="../../viecleget">Viecle Get</a></li>
+        <li role="presentation"><a href="../../viechlepost">Viechle POST</a></li>
+        <li role="presentation"><a href="../../memberpost">Member POST</a></li>
     </ul>
-<% }else if(activate=="createcar"){ %>
+<% }else if(activate=="viechlepost"){ %>
     <ul class="nav nav-tabs"> 
         <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation"><a href="../../api/queryallcars">Query all cars</a></li>
-        <li role="presentation" class="active"><a href="../../api/createcar">Create a car</a></li>
-        <li role="presentation"><a href="../../api/memberinput">Member Input</a></li>
+        <li role="presentation"><a href="../../viecleget">Viecle Get</a></li>
+        <li role="presentation" class="active"><a href="../../viechlepost">Viechle POST</a></li>
+        <li role="presentation"><a href="../../memberpost">Member POST</a></li>
     </ul>
 <% }else{ %>
     <ul class="nav nav-tabs"> 
         <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation"><a href="../../api/queryallcars">Query all cars</a></li>
-        <li role="presentation"><a href="../../api/createcar">Create a car</a></li>
-        <li role="presentation" class="active"><a href="../../api/memberinput">Member Input</a></li>
+        <li role="presentation"><a href="../../viecleget">Viecle Get</a></li>
+        <li role="presentation"><a href="../../viechlepost">Viechle POST</a></li>
+        <li role="presentation" class="active"><a href="../../memberpost">Member POST</a></li>
     </ul>
 <% } %>

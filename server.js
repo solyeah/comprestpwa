@@ -24,18 +24,18 @@ app.get('/', function (req, res) {
   res.render('index', { title: "Main Page", activate: "index"});
 });
 
-// Qeury all cars page
-app.get('/api/queryallcars', function (req, res) {
+// Viecle GET page
+app.get('/viecleget', function (req, res) {
   res.render('query', { title: "Query", activate: "query" });
 });
 
-// Create car page
-app.get('/api/createcar', function (req, res) {
-  res.render('createcar', { title: "Create Car", activate: "createcar"  });
+// Viecle POST page
+app.get('/viechlepost', function (req, res) {
+  res.render('viechlepost', { title: "Viecle POST", activate: "viechlepost"  });
 });
 
-// Create car handle
-app.post('/api/createcar/', async function (req, res) {
+// Viecle POST handle
+app.post('/viechlepost/', async function (req, res) {
   try {
           var vin = req.body.vin;
           var owner = req.body.owner;
@@ -60,13 +60,13 @@ app.post('/api/createcar/', async function (req, res) {
   }   
 });
 
-// Member Input  page
-app.get('/api/memberinput', function (req, res) {
-  res.render('memberinput', { title: "Member Input", activate: "memberinput" });
+// Member POST  page
+app.get('/memberpost', function (req, res) {
+  res.render('memberpost', { title: "Member POST", activate: "memberpost" });
 }); 
 
-// Member Input handle
-app.post('/api/memberinput/', async function (req, res) {
+// Member POST handle
+app.post('/memberpost/', async function (req, res) {
   try {
           var balance = req.body.balance;
           var email = req.body.email;
