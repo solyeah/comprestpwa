@@ -1,6 +1,9 @@
 // ExpressJS Setup
 const express = require('express');
 const app = express();
+
+const PORT = process.env.PORT;
+
 var bodyParser = require('body-parser');
 const fs = require('fs');
 const fetch = require('node-fetch');
@@ -94,6 +97,8 @@ app.post('/memberpost/', async function (req, res) {
   }   
 });
 
-// server start
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+// // server start
+// app.listen(PORT, HOST);
+// console.log(`Running on http://${HOST}:${PORT}`);
+
+app.listen(PORT)
